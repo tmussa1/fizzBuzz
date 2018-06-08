@@ -10,7 +10,7 @@ public class fizzBuzz {
 
         String [] arr = fizzBuzzFunc(rand.nextInt(100), rand.nextInt(100));
 
-        for(int i = 1; i < arr.length; i++){
+        for(int i = 0; i < arr.length; i++){
             if(arr[i] != null){
             System.out.println(arr[i]);}
         }
@@ -19,7 +19,7 @@ public class fizzBuzz {
         String [] arr = new String[end + 1];
 
         if(end - start < 10){
-            System.out.println("This won't take too long");
+            arr[0] = "This won't take too long";
         }
 
         for (int i = start; i <= end; i++) {
@@ -39,6 +39,20 @@ public class fizzBuzz {
                     arr[i] = i + " ";
                 }
         }
+
+        /*
+        Bonus
+         */
+        int k = start % 2 == 0 ? start : start + 1;
+        String [] RockSci = new String[]{"Rock","Paper","Scissors", "Lizard", "Spock"};
+        int i = 0;
+        while(k <= end){
+            if(k >= 10 && k % 2 == 0){
+                arr[k] = arr[k] + " " + RockSci[i++ % 5];
+            }
+                k += 2;
+        }
+
         return arr;
     }
 }
