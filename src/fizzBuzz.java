@@ -12,7 +12,7 @@ public class fizzBuzz {
 
         for(int i = 1; i < arr.length; i++){
             if(arr[i] != null){
-            System.out.println(i + " " + arr[i]);}
+            System.out.println(arr[i]);}
         }
     }
     public static String[] fizzBuzzFunc(int start, int end){
@@ -33,6 +33,10 @@ public class fizzBuzz {
                     arr[i] = "Buzz";
                 } else if (i % 3 == 0 && i % 5 == 0) {
                     arr[i] = "FizzBuzz";
+                } else if(i % 7 == 0){
+                    arr[i] = i + " multiple of seven";
+                } else {
+                    arr[i] = i + " ";
                 }
         }
         return arr;
