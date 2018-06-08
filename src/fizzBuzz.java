@@ -5,10 +5,8 @@ public class fizzBuzz {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
-/*
-        String [] arr = fizzBuzzFunc(1,100);
 
-        */
+        //String [] arr = fizzBuzzFunc(1,100);
 
         String [] arr = fizzBuzzFunc(rand.nextInt(100), rand.nextInt(100));
 
@@ -20,7 +18,11 @@ public class fizzBuzz {
     public static String[] fizzBuzzFunc(int start, int end){
         String [] arr = new String[end + 1];
 
-            for (int i = start; i <= end; i++) {
+        if(end - start < 10){
+            System.out.println("This won't take too long");
+        }
+
+        for (int i = start; i <= end; i++) {
                 if( start == end){
                     arr[i] = "Shazam!!";
                     break;
